@@ -2,6 +2,12 @@
     font-family: "poppins";
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
 /* nacbar */
 .navbar{
     transition: all.3s ease;
@@ -37,40 +43,9 @@ yellow{
 
 }
 /* hero */
-/* layanan */
-.layanan .row .col{
-    background-color: #222;
-}
-.layanan .row{
-    margin: 0px 30px 0px 30px;
-}
-.box-bayangan{
-    border-radius: 15px;
-    transition: 0.5s;
-    margin-bottom: 50px;
-    cursor: pointer;
-    background-color: #000000;
-}
-.box-bayangan:hover{
-    transform: scale(1.02);
-}
 
 
-.poto-project{
-    width: 100%;
-    height: 60%;
-    padding: 0px 5px 30px 5px;
-    border-radius: 15px;
-}
 
-.teks_layanan{
-    text-decoration: underline#888;
-    
-}
- /* .kotak-layanan{
-    margin-left: 20px;
-    margin-right: 20px;
-} */
 
 /* tentang kami */
 
@@ -100,6 +75,47 @@ yellow{
 }
 /* end tentang */
 
+/* SECTION LAYANAN */
+#layanan {
+  padding: 50px ;
+}
+
+.teks_layanan {
+  text-decoration: underline;
+  text-decoration-color: #888;
+}
+
+/* CARD */
+.card-layanan {
+  background: #111;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: .3s;
+  height: 100%;
+}
+
+.card-layanan:hover {
+  transform: translateY(-5px);
+}
+
+/* GAMBAR FIX — biar tidak terlalu besar di desktop */
+.card-layanan img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.col-layanan {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+
+
+/* end layanan */
+
 /* paket */
 paket{
     text-decoration: underline#ffd505;
@@ -113,34 +129,51 @@ paket{
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     box-shadow: 0px 0px 8px #00000040;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 /* Hover Animation */
 .box-paket:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
     box-shadow: 0px 12px 30px #00000070;
     border-radius: 25px;
+    background: #1a1a1a;
+}
+
+.pro:hover{
+     transform: translateY(-10px);
+    box-shadow: 0px 12px 30px #ffdd0070;
+    border-radius: 25px;
+    background: #ff0000;
+}
+
+.mid:hover{
+     transform: translateY(-10px);
+    box-shadow: 0px 12px 30px #00000070;
+    border-radius: 25px;
+    background: #a90808;
 }
 /* Tombol Langganan Style */
 .langganan {
     background-color: transparent;
-    border: 2px solid #FFD500;
+    border: 2px solid #ffffff;
     color: #ffffff;
     padding: 12px 20px;
     width: 80%;
     border-radius: 10px;
     font-weight: bold;
-    text-transform: uppercase;
+
     cursor: pointer;
     transition: 0.3s ease-in-out;
-  display: block;
-  text-align: center;
-  margin: 20px auto 0 auto; 
+    display: block;
+    text-align: center;
+    margin: auto; 
+    margin-bottom: 30px;
 }
 
 .langganan:hover {
     background-color: #FFD500;
-    color: #000;
+    color: #ffffff;
     border-color: #FFD500;
     transform: translateY(-3px);
 }
@@ -192,7 +225,9 @@ paket{
 .kontak{
     padding-bottom: 50px;
 }
-
+.kontak iframe{
+    border-radius: 15px;
+}
 .contact-section .container {
   display: flex;
   height: 450px;
@@ -201,6 +236,7 @@ paket{
 
 .map {
   flex: 1;
+  
 }
 
 .form {
@@ -472,11 +508,11 @@ paket{
   }
 
   #Service .judul {
-    font-size: 20px;
+    font-size: 40px;
   }
 
   #Service h2 {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   #Service ul li {
@@ -536,3 +572,35 @@ paket{
         display: block;
     }
 }
+
+/* add responsive fix  */
+/* Responsive */
+@media (max-width: 992px) { 
+  /* Tablet: tetap 3 kolom tapi lebih rapat */
+  .col-layanan {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HP: 1 kolom */
+  .row.g-4 {
+    justify-content: center;
+  }
+
+  .col-layanan {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card-layanan {
+    padding: 20px;
+  }
+
+  .card-layanan img {
+    max-height: 160px;
+  }
+}
+
+
